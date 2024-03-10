@@ -5,22 +5,10 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>FirstServlet</title>
-</head>
-<body>
-Enter Username and Email ID using GET method
-<h3>Notice the queryString(uname="name"&email="email" in the URL)</h3>
-<form action="RemoteEjbServlet" method="get">
-Username: <input type="text" name="uname"><br/>
-Email ID: <input type="text" name="email"><br/>
-<input type="submit"> <br/>
-</form>
-<br/>
-<br/>
-<br/>
-<br/>
+<title>remote-ejb-test</title>
 
-Enter host name to test remote EJB connectivity ...
+
+<h1>Enter host name to test remote EJB connectivity ... </h1>
 
 <form action="RemoteEjbServlet" method="post">
 host: <input type="text" name="host"><br/>
