@@ -16,7 +16,7 @@
 5. Run the docker compose
      <br> docker compose up -d </br>
 
-     <a href="http://localhost:8880/webclient">
+     <a href="http://localhost:8880/webclient"/>http://localhost:8880/webclient</br>
 
      <br> and provide the wildfly service name (eg. wildfly-server)</br>
 
