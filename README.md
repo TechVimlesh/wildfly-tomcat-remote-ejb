@@ -10,11 +10,11 @@
 2. Change the working directory
 
 3. build app and docker images
-      mvn clean install docker:build  
+      <br>mvn clean install docker:build  </br>
 
 
 5. Run the docker compose
-      docker compose up -d
+     <br> docker compose up -d </br>
 
 🌟 You are all set!
 
