@@ -1,0 +1,71 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>org.example</groupId>
+        <artifactId>wildfly-tomcat-remote-ejb</artifactId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+    <artifactId>tomcat-remote-ejb-client</artifactId>
+    <name>Archetype - tomcat-remote-ejb-client</name>
+    <packaging>war</packaging>
+    <properties>
+        <servlet.version>3.1.0</servlet.version>
+        <version.server.bom>9.0.2.Final</version.server.bom>
+    </properties>
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.wildfly.bom</groupId>
+                <artifactId>wildfly-jakartaee8-with-tools</artifactId>
+                <version>18.0.0.Final</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+    <dependencies>
+    <dependency>
+        <groupId>javax.servlet</groupId>
+        <artifactId>javax.servlet-api</artifactId>
+        <version>${servlet.version}</version>
+    </dependency>
+        <dependency>
+            <groupId>org.example</groupId>
+            <artifactId>wildfly-remote-ejb-server</artifactId>
+            <version>1.0-SNAPSHOT</version>
+            <scope>compile</scope>
+        </dependency>
+        <!-- Include the ejb client jars -->
+        <dependency>
+            <groupId>org.wildfly</groupId>
+            <artifactId>wildfly-ejb-client-bom</artifactId>
+            <type>pom</type>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.glassfish.web</groupId>
+            <artifactId>jakarta.servlet.jsp.jstl</artifactId>
+            <version>1.2.6</version>
+        </dependency>
+    </dependencies>
+    <build>
+        <finalName>webclient</finalName>
+        <plugins>
+            <plugin>
+                <groupId>io.fabric8</groupId>
+                <artifactId>docker-maven-plugin</artifactId>
+                <configuration>
+                    <verbose>true</verbose>
+                    <images>
+                        <!-- A single's image configuration -->
+                        <image>
+                            <alias>tomcat-client</alias>
+                            <name>${docker.image.path}tomcat-client</name>
+                        </image>
+                    </images>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>
