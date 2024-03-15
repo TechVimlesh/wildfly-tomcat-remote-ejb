@@ -121,7 +121,7 @@ public class RemoteEjbServlet extends HttpServlet {
 
 		out.write("<html><body><h4>Check console to understand the flow</h4></body></html>");
 		out.write("<html><body><h2>Username and email id is stored in the session, go back and click on \"TestSession\" to test the session</h2></body></html>");
-		out.write("<html><body><p>&copy 2016 Preetham</p></body></html>");
+		out.write("<html><body><p>&copy 2024 Vimlesh</p></body></html>");
 	}
 
 	public static void main(String[] args) throws NamingException {
